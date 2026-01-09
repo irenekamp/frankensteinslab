@@ -26,16 +26,18 @@
 /****************/
 
 header {
-	background-color: gainsboro;
-	font-family: var(--font-display);
-	font-size: clamp(2rem, 5vw, 3.5rem);
-	letter-spacing: .08em;
 	min-width: 0;
-
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 	padding: 1rem 1.5rem;
+}
+
+h1 {
+	background-color: gainsboro;
+	font-family: var(--font-display);
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	letter-spacing: .08em;
 }
 
 .lab_logo {
