@@ -16,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Irene
 
   #### Je startniveau:
-  hier je startniveau (kies uit zwart, rood óf blauw)
+  <i class="fab fa-rocket"></i>
 
   #### Je focus:
-  hier je focus (kies uit responsive óf surface plane)
+  surface
  
 </details>
 
@@ -36,15 +36,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  Potjes met ogen, snuitjes, oren etc. waarmee je je eigen Frankenstein(beestje) kan samenstellen
+  focus: animatie, ik denk iets met native customizable select (https://www.smashingmagazine.com/2025/12/state-logic-native-power-css-wrapped-2025/), en netjes werken  
 
-  #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
-
-  #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
  
 </details>
 
