@@ -33,8 +33,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  Potjes met ogen, snuitjes, oren etc. waarmee je je eigen Frankenstein(beestje) kan samenstellen
-  focus: animatie, ik denk iets met native customizable select (https://www.smashingmagazine.com/2025/12/state-logic-native-power-css-wrapped-2025/), en netjes werken  
+  Omschrijving Potjes met ogen, snuitjes, oren etc. waarmee je je eigen Frankenstein(beestje) kan samenstellen.
+  Focus: animatie, GEEN JS ik denk iets met native customizable select (https://www.smashingmagazine.com/2025/12/state-logic-native-power-css-wrapped-2025/), en netjes werken   
 
  
 </details>
