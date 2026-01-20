@@ -18,9 +18,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Auteur:
   Irene
 
-  #### Je startniveau:
-  <i class="fab fa-rocket"></i>
-
   #### Je focus:
   surface
  
