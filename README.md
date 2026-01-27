@@ -34,7 +34,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je opdracht:
   Omschrijving Potjes met ogen, snuitjes, oren etc. waarmee je je eigen Frankenstein(beestje) kan samenstellen.
-  Focus: animatie, GEEN JS ik denk iets met native customizable select (https://www.smashingmagazine.com/2025/12/state-logic-native-power-css-wrapped-2025/), en netjes werken   
+  Focus: animatie, GEEN JS ik denk iets met native customizable select (https://www.smashingmagazine.com/2025/12/state-logic-native-power-css-wrapped-2025/), anchor positioning https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning  en netjes werken   
 
  
 </details>
