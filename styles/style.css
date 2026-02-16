@@ -48,6 +48,7 @@ header h1 {
 body {
 	display: grid;
 	background-color: var(--color-background);
+	font-family:Arial, Helvetica, sans-serif;
 }
 
 
