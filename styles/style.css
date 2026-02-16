@@ -7,16 +7,17 @@
 
 
 
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text: #0D0D0D;
+	--color-background: #A4B8BF;
+	--color-fluid: #8D9FA6;
+	--color-header: #eefaf8f3;
+	/*#595958;*/
+	--color-accent: #403836;
 	--font-display: "Abril Fatface", serif;
 }
 
@@ -30,18 +31,26 @@ header {
 	align-items: center;
 	gap: clamp(.5rem, 5vw, 2rem);
 	padding: 1rem 1.5rem;
-	background-color: gainsboro;
+	background-color: var(--color-header);
 }
 
 header h1 {
 	font-family: var(--font-display);
 	font-size: clamp(1.85rem, 5vw, 3.5rem);
+	color: var(--color-text);
 }
 
 .lab_logo {
 	width: 4em;
 	height: auto;
 }
+
+body {
+	display: grid;
+	background-color: var(--color-background);
+}
+
+
 
 @media (max-width: 600px) {
 	header{
