@@ -19,75 +19,75 @@
 </head>
 
 <body>
-	<header>
-		<img class = "lab_logo" src="images/Frankenstein.png" alt="Headshot of Frankenstein's monster" >
-		<h1>Laboratorium</h1>
-	</header>	
-	
 
-<label for="selecteer-ogen">
-  Ogen
-</label>
-<select name="ogen" id="selecteer-ogen">
-  <button>
-    <selectedcontent></selectedcontent>
-  </button>
-  <div class="menu-opties">
-    <option value="" selected disabled>Kies een set</option>
-      <option value="rond">Afbeelding oog rond </option>
-      <option value="gesloten">Afbeelding oog gesloten </option>
-    <option value="dichtgenaaid">Afbeelding oog dichtgenaaid </option>
-    <option value="verdrietig">Afbeelding oog verdrietig </option>
-  </div>
-</select>
+  <input type="radio" name="ogen" id="ogen-open" hidden>
+  <input type="radio" name="ogen" id="ogen-dicht" hidden>
+  <input type="radio" name="ogen" id="ogen-genaaid" hidden> 
 
-<label for="selecteer-neuzen">
-  Neuzen
-</label>
-<select name="neuzen" id="selecteer-neuzen">
-  <button>
-    <selectedcontent></selectedcontent>
-  </button>
-  <div class="menu-opties">
-    <option value="" selected disabled>Kies een set</option>
-      <option value="normaal">Afbeelding neus normaal </option>
-      <option value="varken">Afbeelding neus varken </option>
-    <option value="gaatjes">Afbeelding neus gaatjes </option>
-    <option value="grotegok">Afbeelding neus groot </option>
-  </div>
-</select>
+  <div class="lab">
 
-<label for="selecteer-monden">
-  Monden
-</label>
-<select name="monden" id="selecteer-monden">
-  <button>
-    <selectedcontent></selectedcontent>
-  </button>
-  <div class="menu-opties">
-    <option value="" selected disabled>Kies een set</option>
-      <option value="verbaasd">Afbeelding mond verbaasd </option>
-      <option value="tanden">Afbeelding mond tanden </option>
-    <option value="dichtgenaaid">Afbeelding mond dichtgenaaid </option>
-    <option value="verdrietig">Afbeelding mond verdrietig </option>
-  </div>
-</select>
+    <h1 class="lab__titel">
+      Frankenstein's Lab
+      <span>// bouw je eigen monster //</span>
+    </h1>
 
-<label for="selecteer-versiering">
-  Versiering
-</label>
-<select name="versiering" id="selecteer-versiering">
-  <button>
-    <selectedcontent></selectedcontent>
-  </button>
-  <div class="menu-opties">
-    <option value="" selected disabled>Kies een item</option>
-      <option value="strik">Afbeelding strik </option>
-      <option value="spijker">Afbeelding spijker </option>
-    <option value="wond">Afbeelding wond </option>
+    <div class="lab__inhoud">
+
+      <section class="operatietafel" aria-label="Operatietafel">
+        <p class="operatietafel__label">— operatietafel —</p>
+
+        <div class="hoofd" aria-label="Blanco gezicht">
+          <div class="zone zone--ogen">
+            <span class="zone__label"></span>
+              <div class="ogen">
+                <div class="oog"></div>
+                <div class="oog"></div>
+              </div>
+          </div>
+
+          <div class="zone zone--neus">
+            <span class="zone__label">neus</span>
+          </div>
+
+          <div class="zone zone--mond">
+            <span class="zone__label">mond</span>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="voorraadkast" aria-label="Voorraadkast">
+        <h2 class="voorraadkast__titel">Voorraadkast</h2>
+        <div class="categorie">
+          <p class="categorie__naam">— ogen —</p>
+          <div class="categorie__potjes">
+            <label class="potje potje--ogen-open" for="ogen-open"> 
+              <span class="potje__preview">
+                <span class="preview-oog-open"></span>
+              </span>
+              <span class="potje__naam">open</span>
+             </label>
+            
+            <label class="potje potje--ogen-dicht" for="ogen-dicht"> 
+              <span class="potje__preview">
+                <span class="preview-oog-dicht"></span>
+              </span>
+              <span class="potje__naam">dicht</span> 
+            </label>
+
+            <label class="potje potje--ogen-genaaid" for="ogen-genaaid"> 
+              <span class="potje__preview">
+                <span class="preview-oog-genaaid"></span>
+              </span>
+              <span class="potje__naam">genaaid</span> 
+            </label>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
   </div>
-</select>
 
 </body>
-
 </html>

@@ -1,61 +1,433 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
-}
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg:        #1c1f22;
+      --color-bg-panel:  #23272b;
+      --color-kast:      #2a2f35;
+      --color-kast-rand: #3d4850;
+      --color-accent:    #39ff85;
+      --color-text:      #cdd6e0;
+      --color-text-dim:  #5a6a78;
+      --color-title:     #e8edf2;
+
+      --color-huid:         #f0ebe3;
+      --color-huid-rand:    #c8bfb4;
+      --color-huid-schaduw: #d4cdc5;
 
 
+      --font-display: "Abril Fatface", serif;
+      --font-body:    "Share Tech Mono", monospace;
 
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-	/* startje */
-	--color-text: #0D0D0D;
-	--color-background: #A4B8BF;
-	--color-fluid: #8D9FA6;
-	--color-header: #eefaf8f3;
-	/*#595958;*/
-	--color-accent: #403836;
-	--font-display: "Abril Fatface", serif;
-}
+      --max-width: 1100px;
+      --gap: 2rem;
+
+      --hoofd-breedte: clamp(160px, 22vw, 240px);
+      --oog-grootte: clamp(14px, 2vw, 20px);
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--color-bg);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.015) 40px,
+          rgba(255,255,255,0.015) 41px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.015) 40px,
+          rgba(255,255,255,0.015) 41px
+        );
+      color: var(--color-text);
+      font-family: var(--font-body);
+    }
+
+    .lab {
+      width: min(100%, var(--max-width));
+      margin-inline: auto;
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: var(--gap);
+    }
+
+    .lab__titel {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: var(--color-title);
+      letter-spacing: 0.05em;
+    }
+
+    .lab__titel span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+      color: var(--color-accent);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      text-shadow: 0 0 10px rgba(57, 255, 133, 0.6);
+    }
+
+    .lab__inhoud {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .lab__inhoud {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Operatietafel */
+    .operatietafel {
+      background: var(--color-bg-panel);
+      border: 1px solid var(--color-kast-rand);
+      border-radius: 0.25rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 420px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .operatietafel__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-dim);
+    }
+
+    /* Voorraadkast met potjes*/
+    .voorraadkast {
+      background: var(--color-kast);
+      border: 1px solid var(--color-kast-rand);
+      border-radius: 0.25rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        inset 0 -1px 0 rgba(0,0,0,0.3);
+    }
+
+    .voorraadkast__titel {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--color-text);
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 8px rgba(57, 255, 133, 0.3);
+    }
+
+ /* Categorie in de kast */
+    .categorie__naam {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .categorie__potjes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* Potje (label) */
+    .potje {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 0.8rem;
+      background: var(--color-bg-panel);
+      border: 1px solid var(--color-kast-rand);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-width: 4rem;
+    }
+
+    .potje:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 8px rgba(57, 255, 133, 0.2);
+    }
+
+    .potje__preview {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .potje__naam {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-dim);
+    }
+
+    /* Geselecteerd potje */
+    #ogen-open:checked     ~ .lab .potje--ogen-open,
+    #ogen-dicht:checked    ~ .lab .potje--ogen-dicht,
+    #ogen-genaaid:checked  ~ .lab .potje--ogen-genaaid {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 10px rgba(57, 255, 133, 0.35);
+    }
 
 
-/****************/
-/* JOUW STYLING */
-/****************/
+    /* Gezicht */
+    .hoofd {
+      width: var(--hoofd-breedte);
+      aspect-ratio: 3 / 4;
+      background: var(--color-huid);
+      border-radius: 48% 48% 44% 44% / 42% 42% 52% 52%;
+      border: 2px solid var(--color-huid-rand);
+      position: relative;
+      box-shadow:
+        inset -6px -10px 20px rgba(0,0,0,0.1),
+        inset 3px 3px 10px rgba(255,255,255,0.5),
+        0 8px 32px rgba(0,0,0,0.6);
+    }
 
-header {
-	display: flex;
-	align-items: center;
-	gap: clamp(.5rem, 5vw, 2rem);
-	padding: 1rem 1.5rem;
-	background-color: var(--color-header);
-}
+    /* Zones */
+    .zone {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-header h1 {
-	font-family: var(--font-display);
-	font-size: clamp(1.85rem, 5vw, 3.5rem);
-	color: var(--color-text);
-}
+    .zone--ogen {
+      top: 38%;
+      width: 70%;
+      height: 14%;
+    }
 
-.lab_logo {
-	width: 4em;
-	height: auto;
-}
+    .zone--neus {
+      top: 55%;
+      width: 30%;
+      height: 14%;
+      outline: 1px dashed rgba(57, 255, 133, 0.35);
+    }
 
-body {
-	display: grid;
-	background-color: var(--color-background);
-	font-family:var(--font-display);
-}
+    .zone--mond {
+      top: 72%;
+      width: 50%;
+      height: 12%;
+      outline: 1px dashed rgba(57, 255, 133, 0.35);
+    }
 
+    .zone__label {
+      font-family: var(--font-body);
+      font-size: 0.5rem;
+      color: rgba(57, 255, 133, 0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
 
+     /* ── Ogen op het gezicht ── */
+    .ogen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 8%;
+    }
 
-@media (max-width: 600px) {
-	header{
-		flex-direction: column;
-		text-align: center;
-	}
-}
+    .oog {
+      width: var(--oog-grootte);
+      height: var(--oog-grootte);
+      border-radius: 50%;
+      background: var(--color-huid-schaduw);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    /* Standaard: lege placeholders zichtbaar als subtiele deuken */
+    .oog::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+    }
+
+    /* ── Ogen open ── */
+    #ogen-open:checked ~ .lab .oog {
+      background: #f5f5f0;
+      border: 1.5px solid #555;
+      border-radius: 50%;
+      width: var(--oog-grootte);
+      height: var(--oog-grootte);
+    }
+
+    /* Iris */
+    #ogen-open:checked ~ .lab .oog::before {
+      content: "";
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 55%;
+      height: 55%;
+      background: #4a7a9b;
+      border-radius: 50%;
+    }
+
+    /* Pupil */
+    #ogen-open:checked ~ .lab .oog::after {
+      content: "";
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28%;
+      height: 28%;
+      background: #111;
+      border-radius: 50%;
+    }
+
+    /* ── Ogen dicht ── */
+    #ogen-dicht:checked ~ .lab .oog {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      width: var(--oog-grootte);
+      height: calc(var(--oog-grootte) * 0.2);
+    }
+
+    #ogen-dicht:checked ~ .lab .oog::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #555;
+      border-radius: 2px;
+    }
+
+    #ogen-dicht:checked ~ .lab .oog::after { display: none; }
+
+    /* ── Ogen dichtgenaaid ── */
+    #ogen-genaaid:checked ~ .lab .oog {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      width: var(--oog-grootte);
+      height: calc(var(--oog-grootte) * 0.15);
+    }
+
+    #ogen-genaaid:checked ~ .lab .oog::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-huid-schaduw);
+      border: 1px solid #999;
+      border-radius: 2px;
+    }
+
+    #ogen-genaaid:checked ~ .lab .oog::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: -0.55em;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 1em;
+      background: repeating-linear-gradient(
+        180deg,
+        #444 0 3px,
+        transparent 3px 6px
+      );
+      border-radius: 0;
+    }
+
+    /* Potje previews */
+    .preview-oog-open {
+      width: 22px; 
+      height: 22px;
+      border-radius: 50%;
+      background: #f5f5f0;
+      border: 1.5px solid #555;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .preview-oog-open::before {
+      content: "";
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 9px; 
+      height: 9px;
+      background: #4a7a9b;
+      border-radius: 50%;
+    }
+    .preview-oog-open::after {
+      content: "";
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px; 
+      height: 5px;
+      background: #111;
+      border-radius: 50%;
+    }
+
+    .preview-oog-dicht {
+      width: 18px; 
+      height: 3px;
+      background: #555;
+      border-radius: 2px;
+    }
+
+    .preview-oog-genaaid {
+      width: 18px; 
+      height: 2px;
+      background: var(--color-huid-schaduw);
+      border: 1px solid #999;
+      border-radius: 2px;
+      position: relative;
+    }
+    .preview-oog-genaaid::after {
+      content: "";
+      position: absolute;
+      top: -6px; 
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px; 
+      height: 8px;
+      background: repeating-linear-gradient(
+        180deg, #444 0 2px, transparent 2px 4px
+      );
+    }
