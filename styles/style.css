@@ -40,22 +40,7 @@
 body {
   min-height: 100vh;
   background-color: var(--color-bg);
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 41px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 41px
-    );
-  color: var(--color-text);
+    color: var(--color-text);
   font-family: var(--font-body);
 }
 
