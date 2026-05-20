@@ -27,6 +27,14 @@
 
   --hoofd-breedte: clamp(160px, 22vw, 240px);
   --oog-grootte: clamp(14px, 2vw, 20px);
+
+  --potje-breedte:  clamp(28px, 4vw, 40px);
+  --potje-hoogte:   clamp(38px, 5.5vw, 54px);
+  --potje-glas:     rgba(255, 255, 255, 0.06);
+  --potje-rand:     rgba(255, 255, 255, 0.2);
+  --potje-rand-top: rgba(255, 255, 255, 0.3);
+  --potje-glans:    rgba(255, 255, 255, 0.08);
+  --potje-deksel:   rgba(255, 255, 255, 0.15);
 }
 
 body {
@@ -159,29 +167,62 @@ body {
   align-items: center;
   gap: 0.4rem;
   padding: 0.6rem 0.8rem;
-  background: var(--color-bg-panel);
-  border: 1px solid var(--color-kast-rand);
-  border-radius: 0.25rem;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: filter 0.15s;
   min-width: 4rem;
 }
 
+
 .potje:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 8px rgba(57, 255, 133, 0.2);
+  filter: brightness(1.2);
 }
 
 .potje_preview {
-  width: 36px;
-  height: 36px;
+  width: var(--potje-breedte);
+  height: var(--potje-hoogte);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--potje-glas);
+  border: 1.5px solid var(--potje-rand);
+  border-top: 3px solid var(--potje-rand-top);
+  border-radius: 3px 3px 6px 6px;
+  box-shadow: inset 2px 0 4px var(--potje-glas), inset -1px 0 3px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/*vloeistof */
+.potje_preview::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: var(--potje-kleur, var(--color-accent));
+  border-radius: 0 0 4px 4px;
+  opacity: 0.35;
+}
+
+/* glazen deksel */
+.potje_preview::after {
+  content: "";
+  position: absolute;
+  top: clamp(-5px, -0.5vw, -4px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: clamp(4px, 0.6vw, 6px);
+  background: var(--potje-deksel);
+  border: 1px solid var(--potje-rand);
+  border-radius: 2px 2px 0 0;
 }
 
 .potje_naam {
-  font-size: 0.6rem;
+  font-size: clamp(0.5rem, 1vw, 0.65rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-text-dim);
